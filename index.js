@@ -8,7 +8,7 @@ const db = new Datastore({ filename: 'my-database.db', autoload: true });
 
 app.use(express.json());
 
-app.post('/api/addData', (req, res) => {
+/*app.post('/api/addData', (req, res) => {
   const data = req.body;
 
   db.insert(data, (err, newDoc) => {
@@ -18,6 +18,11 @@ app.post('/api/addData', (req, res) => {
       res.json(newDoc);
     }
   });
+});*/
+
+app.get('/home',(req,res)=>{
+    console.log("conenctado a server")
+    res.send("conenctado a server")
 });
 
 app.listen(port, () => {
