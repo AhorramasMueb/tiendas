@@ -1,5 +1,5 @@
 const express = require('express');
-const core = require('http-server/lib/core');
+// const core = require('http-server/lib/core');
 const cors = require('cors')
 const Datastore = require('nedb');
 
