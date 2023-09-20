@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const core = require('http-server/lib/core');
 const cors = require('cors')
