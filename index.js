@@ -5,8 +5,10 @@ const Datastore = require('nedb');
 
 const app = express();
 app.use(cors())
-const port = 3001;
-
+// const port = 3001;
+const port = require('./config.js');
+/* console.log(`PORT=${port.PORT}`);
+return */
 const db = new Datastore({ filename: 'tiendasDB.db', autoload: true });
 
 app.use(express.json());
@@ -130,6 +132,6 @@ app.delete('/deleteProducto/:suc/:id', (req, res) => {
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.listen(port.PORT, () => {
+    console.log(`Server is running on port ${port.PORT}`);
 });
