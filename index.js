@@ -1,15 +1,20 @@
 const express = require('express');
-// const core = require('http-server/lib/core');
 const cors = require('cors')
 const Datastore = require('nedb');
 
+
 const app = express();
 app.use(cors())
-// const port = 3001;
+
+const os = require("os");
+const path = require("path");
+let documentsPath = path.join(os.homedir(), "Documents");
+// console.log("Ubicación de la carpeta de documentos:", documentsPath);
+// return
+
 const port = require('./config.js');
-/* console.log(`PORT=${port.PORT}`);
-return */
-const db = new Datastore({ filename: 'tiendasDB.db', autoload: true });
+
+const db = new Datastore({ filename: documentsPath+'/dataSucursales/tiendasDB.db', autoload: true });
 
 app.use(express.json());
 
