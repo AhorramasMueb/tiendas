@@ -14,11 +14,11 @@ app.use(cors());
 
 const port = require('./config.js');
 const db = new Datastore({ filename: documentsPath+'/dataSucursales/tiendasDB.db', autoload: true });
-console.log(documentsPath)
+console.log("ruta = "+documentsPath)
 app.use(express.json());
 
 app.get('/home', (req, res) => {
-    res.send("conenectado a server")
+    res.send("conectado a server")
 });
 
 
